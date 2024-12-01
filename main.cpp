@@ -34,26 +34,6 @@ void Citire_Tari()
         n++;
     }
 }
-
-void Vecini()
-{
-    string tara, vecini;
-    cout<<"Introduceti tara a carei vecini vreti sa ii numiti: "<<endl;
-    cin>>tara;
-    if(Verificare_Tara(tara)==0)
-    {
-        cout<<"Tara indrodusa gresit sau nu exista.Incercati iar."<<endl;
-        void Vecini();
-    }
-    cout<<"Care sunt tarile cu care vrei ca "<<tara<<" sa se invecineze: "<<endl;
-
-    while(cin>>vecini)
-    {
-        if(Verificare_Tara(vecini)==0) cout<<"Tara indrodusa gresit sau nu exista.Incercati iar."<<endl;
-        else Setare_Granite(tara,vecini);
-    }
-}
-
 void Setare_Granite(string tara1, string tara2)
 {
     for(int i=0;i<n;i++)
@@ -70,6 +50,26 @@ void Setare_Granite(string tara1, string tara2)
       }
     }
 }
+
+void Vecini()
+{
+    string tara, vecini;
+    cout<<"Introduceti tara a carei vecini vreti sa ii numiti: "<<endl;
+    cin>>tara;
+    if(Verificare_Tara(tara)==0)
+    {
+        cout<<"Tara indrodusa gresit sau nu exista.Incercati iar."<<endl;
+        void Vecini();
+    }
+    cout<<"Care sunt tarile cu care vrei ca "<<tara<<" sa se invecineze: "<<endl;
+
+    while(cin>>vecini)
+    {
+        if(Verificare_Tara(vecini)==0) cout<<"Tara indrodusa gresit sau nu exista.Incercati iar";
+    }
+}
+
+
 
 int main()
 {
