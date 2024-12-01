@@ -29,7 +29,7 @@ int main()
 
     for(int k=0;k<i;k++)
     {
-        cout<<"Nr: "<<A[k].index<<" Numele: "<<A[k].nume<<endl; 
+        cout<<"Tara NR: "<<A[k].index<<":-"<<A[k].nume<<endl; 
     }
 
     
