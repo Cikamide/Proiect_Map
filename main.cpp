@@ -17,6 +17,7 @@ int main()
     string tara;
     cout<<"Da-ti un numar de tari:"<<endl;;
     cin>>nr_tari;
+    cin.ignore();
     for(int k=0;k<nr_tari;k++)
     {
         cout<<"Introduceti urmatoarea tara: "<<endl;
