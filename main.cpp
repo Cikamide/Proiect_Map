@@ -43,22 +43,7 @@ void Setare_Granite(string tara1, string tara2)
 
 void Vecini()
 {
-    string tara, vecini;
-    cout<<"Introduceti tara a carei vecini vreti sa ii numiti: "<<endl;
-    cin>>tara;
-    if(Verificare_Tara(tara)==-1)
-    {
-        cout<<"Tara indrodusa gresit sau nu exista.Incercati iar."<<endl;
-        void Vecini();
-    }
-    cout<<"Care sunt tarile cu care vrei ca "<<tara<<" sa se invecineze: "<<endl;
-    cin.ignore();
-    while(getline(cin, tara))
-    {
-        if (tara.empty()) break;
-        if(Verificare_Tara(vecini)==-1) cout<<"Tara indrodusa gresit sau nu exista.Incercati iar";
-        Setare_Granite(tara, vecini);
-    }
+    
 }
 
 
