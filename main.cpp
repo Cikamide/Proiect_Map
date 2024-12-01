@@ -66,6 +66,7 @@ void Vecini()
     while(cin>>vecini)
     {
         if(Verificare_Tara(vecini)==0) cout<<"Tara indrodusa gresit sau nu exista.Incercati iar";
+        Setare_Granite(tara, vecini);
     }
 }
 
