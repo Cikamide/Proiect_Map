@@ -14,7 +14,7 @@ struct Tari
 
 int Verificare_Tara(string tara)
 {
-    for(int i=0;i<n;n++)
+    for(int i=0;i<n;i++)
     {
       if(A[i].nume==tara) return 1;
     }
@@ -62,9 +62,10 @@ void Vecini()
         void Vecini();
     }
     cout<<"Care sunt tarile cu care vrei ca "<<tara<<" sa se invecineze: "<<endl;
-
-    while(cin>>vecini)
+    cin.ignore();
+    while(getline(cin, tara))
     {
+        if (tara.empty()) break;
         if(Verificare_Tara(vecini)==0) cout<<"Tara indrodusa gresit sau nu exista.Incercati iar";
         Setare_Granite(tara, vecini);
     }
