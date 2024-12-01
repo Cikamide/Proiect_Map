@@ -3,35 +3,38 @@
 using namespace std;
 
 int Granite[100][100];
-int i=0,j=0;
+int i = 0, j = 0;
 
 struct tari
 {
-  int index;
-  string nume;
-}A[100];
+    int index;
+    string nume;
+    int id_culoare;
+} A[100];
+
+
+//void Citire_Tari()
+//{}
+
 
 int main()
 {
-    int nr_tari, nr_culori;
     string tara;
-    cout<<"Da-ti un numar de tari:"<<endl;;
-    cin>>nr_tari;
-    cin.ignore();
-    for(int k=0;k<nr_tari;k++)
+   // cout<<"Se vor introduce tari : ";
+    cout << "Introduceti tara: " << endl;
+    while(getline(cin, tara))
     {
-        cout<<"Introduceti urmatoarea tara: "<<endl;
-        getline(cin, tara);
-        A[i].nume=tara;
-        A[i].index=k+1;
+        if (tara.empty()) break;
+        cout << "Introduceti tara: " << endl;
+        A[i].nume = tara;
+        A[i].index = i + 1;
         i++;
     }
 
-    for(int k=0;k<i;k++)
+    for (int k = 0; k < i; k++)
     {
-        cout<<"Tara NR: "<<A[k].index<<":-"<<A[k].nume<<endl; 
+        cout << "Tara NR: " << A[k].index << ":-" << A[k].nume << endl;
     }
 
-    
     return 0;
 }
