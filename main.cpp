@@ -74,6 +74,7 @@ void Setare_Granite(string tara1, string tara2)
 int main()
 {
    Citire_Tari();
+   Vecini();
 
     for (int k = 0; k < n; k++)
     {
