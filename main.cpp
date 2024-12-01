@@ -16,9 +16,9 @@ int Verificare_Tara(string tara)
 {
     for(int i=0;i<n;i++)
     {
-      if(A[i].nume==tara) return 1;
+      if(A[i].nume==tara) return i;
     }
-    return 0;
+    return -1;
 }
 
 void Citire_Tari()
@@ -36,19 +36,9 @@ void Citire_Tari()
 }
 void Setare_Granite(string tara1, string tara2)
 {
-    for(int i=0;i<n;i++)
-    {
-      if(tara1==A[i].nume)
-      {
-        for(int j=0;j<n;j++)
-        {
-            if(tara2==A[j].nume)
-            {
-              Granite[i][j]=Granite[j][i]=1;
-            } 
-        }
-      }
-    }
+   int aux1=Verificare_Tara(tara1);
+   int aux2=Verificare_Tara(tara2);
+   Granite[aux1][aux2] = Granite[aux2][aux1] = 1;
 }
 
 void Vecini()
@@ -56,7 +46,7 @@ void Vecini()
     string tara, vecini;
     cout<<"Introduceti tara a carei vecini vreti sa ii numiti: "<<endl;
     cin>>tara;
-    if(Verificare_Tara(tara)==0)
+    if(Verificare_Tara(tara)==-1)
     {
         cout<<"Tara indrodusa gresit sau nu exista.Incercati iar."<<endl;
         void Vecini();
@@ -66,7 +56,7 @@ void Vecini()
     while(getline(cin, tara))
     {
         if (tara.empty()) break;
-        if(Verificare_Tara(vecini)==0) cout<<"Tara indrodusa gresit sau nu exista.Incercati iar";
+        if(Verificare_Tara(vecini)==-1) cout<<"Tara indrodusa gresit sau nu exista.Incercati iar";
         Setare_Granite(tara, vecini);
     }
 }
