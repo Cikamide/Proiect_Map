@@ -5,7 +5,7 @@ using namespace std;
 int Granite[100][100];
 int i = 0, j = 0;
 
-struct tari
+struct Tari
 {
     int index;
     string nume;
@@ -13,14 +13,9 @@ struct tari
 } A[100];
 
 
-//void Citire_Tari()
-//{}
-
-
-int main()
+void Citire_Tari()
 {
     string tara;
-   // cout<<"Se vor introduce tari : ";
     cout << "Introduceti tara: " << endl;
     while(getline(cin, tara))
     {
@@ -30,6 +25,11 @@ int main()
         A[i].index = i + 1;
         i++;
     }
+}
+
+int main()
+{
+   Citire_Tari();
 
     for (int k = 0; k < i; k++)
     {
