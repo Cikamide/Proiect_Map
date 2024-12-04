@@ -48,18 +48,19 @@ void Vecini()
     int opt1 = 0, opt2 = 0, ok;
     while (opt1 != 3)
     {
+        cout <<"\n==== MENIU ====" << endl;
+        cout << "1. Selectare tara pentre a adauga vecini" << endl;
+        cout << "2. Afișare tari si vecini" << endl;
+        cout << "3. Iesire" << endl;
+        cout << "Alegeti o optiune: " << endl;
+       // cin.ignore();
+        cin >> opt1;
         switch (opt1)
         {
-            cout << "==== MENIU ====" << endl;
-            cout << "1. Selectare tara pentre a adauga vecini" << endl;
-            cout << "2. Afișare tari si vecini" << endl;
-            cout << "3. Iesire" << endl;
-            cout << "Alegeti o optiune: " << endl;
-            cin >> opt1;
-
         case 1:
         {
             cout << "Introduceti tara:" << endl;
+          //  cin.ignore();
             cin >> tara;
             if (Verificare_Tara(tara) == -1)
             {
@@ -75,6 +76,7 @@ void Vecini()
                 cout << "3. Afișare vecini țară" << endl;
                 cout << "4. Ieșire" << endl;
                 cout << "Introduceți opțiunea dorită: "<<endl;
+              //  cin.ignore();
                 cin >> opt2;
 
                 switch (opt2) 
@@ -82,6 +84,7 @@ void Vecini()
                  case 1:
                   { 
                     cout << "Introduceti tara cu care vreti sa se invecineze: "<<endl;
+                   // cin.ignore();
                     cin >> vecin;
 
                     if (Verificare_Tara(vecin) == 0) cout << "Tara introdusa gresit sau nu exista.Incercati iar." << endl;
@@ -95,6 +98,7 @@ void Vecini()
                   case 2:
                   {
                     cout<<"Introduceti vecinul pe care doriti sa il stergeti:"<<endl;
+                    //cin.ignore();
                     cin>>vecin;
                     int ind1,ind2;
                     ind1=Verificare_Tara(tara);
@@ -116,14 +120,14 @@ void Vecini()
                   case 3:
                   {
                     int ind1=Verificare_Tara(tara);
-                    cout<<tara<<"se invecineaza cu: ";
+                    cout<<tara<<" se invecineaza cu: ";
                     for (int j = 1; j <= n; j++) {
                         if (Granite[ind1][j]) {
-                            cout << A[j].nume << ", ";
+                            cout << A[j].nume << " ";
                             ok=1;
                         }
                     }
-                    if (ok==1) cout << "Nimeni";
+                    if (ok==0) cout << "Nimeni";
                     cout << endl;
                     break;
                   }
@@ -150,11 +154,11 @@ void Vecini()
                 {
                     if (Granite[i][j])
                     {
-                        cout << A[j].nume << ", ";
+                        cout << A[j].nume << " ";
                         ok=1;
                     }
                 }
-                if (ok==1)  cout << "Nimeni.";
+                if (ok==0)  cout << "Nimeni.";
                 cout << endl;
             }
             break;
@@ -167,7 +171,7 @@ void Vecini()
         }
         default:
         {
-            cout<<"Ati indrodus o optiune invlida.Incercati iar.";
+            cout<<"Ati indrodus o optiune invlida.Incercati iar."<<endl;
         }
         }
     }
