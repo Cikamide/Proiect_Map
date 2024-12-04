@@ -5,7 +5,7 @@ using namespace std;
 int Granite[100][100];
 int n = 0, m = 0;
 
-struct Tari
+struct Tara
 {
     int index;
     string nume;
@@ -53,14 +53,12 @@ void Vecini()
         cout << "2. Afișare tari si vecini" << endl;
         cout << "3. Iesire" << endl;
         cout << "Alegeti o optiune: " << endl;
-       // cin.ignore();
         cin >> opt1;
         switch (opt1)
         {
         case 1:
         {
             cout << "Introduceti tara:" << endl;
-          //  cin.ignore();
             cin >> tara;
             if (Verificare_Tara(tara) == -1)
             {
@@ -76,7 +74,6 @@ void Vecini()
                 cout << "3. Afișare vecini țară" << endl;
                 cout << "4. Ieșire" << endl;
                 cout << "Introduceți opțiunea dorită: "<<endl;
-              //  cin.ignore();
                 cin >> opt2;
 
                 switch (opt2) 
@@ -84,7 +81,6 @@ void Vecini()
                  case 1:
                   { 
                     cout << "Introduceti tara cu care vreti sa se invecineze: "<<endl;
-                   // cin.ignore();
                     cin >> vecin;
 
                     if (Verificare_Tara(vecin) == 0) cout << "Tara introdusa gresit sau nu exista.Incercati iar." << endl;
@@ -98,7 +94,6 @@ void Vecini()
                   case 2:
                   {
                     cout<<"Introduceti vecinul pe care doriti sa il stergeti:"<<endl;
-                    //cin.ignore();
                     cin>>vecin;
                     int ind1,ind2;
                     ind1=Verificare_Tara(tara);
