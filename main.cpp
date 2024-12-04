@@ -38,12 +38,34 @@ void Setare_Granite(string tara1, string tara2)
 {
    int aux1=Verificare_Tara(tara1);
    int aux2=Verificare_Tara(tara2);
-   Granite[aux1][aux2] = Granite[aux2][aux1] = 1;
+   if(aux1>=0 && aux2>=0) Granite[aux1][aux2] = Granite[aux2][aux1] = 1;
 }
 
 void Vecini()
 {
-    
+    string tara, vecin;
+    int opt1=0,opt2=0;
+    while (opt1 != 3)
+     {
+        cout << "==== MENIU ====" << endl;
+        cout << "1. Selectare tara pentre a adauga vecini" << endl;
+        cout << "2. Afișare tari si vecini" << endl;
+        cout << "3. Iesire" << endl;
+        cout << "Alegeti o optiune: "<<endl;
+        cin >> opt1;
+
+        case1:
+        {
+            cout<<"Introduceti tara:"<<endl;
+            cin>>tara;
+            if(Verificare_Tara(tara)==-1)
+            {
+                cout<<"Tara introdusa gresit sau nu exista.Incercati iar."<<endl;
+                break;
+            }
+
+        }
+     }
 }
 
 
