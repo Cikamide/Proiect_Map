@@ -30,11 +30,12 @@ void Citire_Tari()
     {
         if (tara.empty()) break;
         cout << "Introduceti tara: " << endl;
-         n++;
+        n++;
         A[n].nume = tara;
         A[n].index = n;
     }
 }
+
 void Setare_Granite(string tara1, string tara2)
 {
     int aux1 = Verificare_Tara(tara1);
@@ -68,12 +69,12 @@ void Vecini()
             opt2 = 0;
             while (opt2 != 4)
              {
-                cout << "\n==== MENIU ȚARĂ: " << tara << " ====" << endl;
-                cout << "1. Adăugare vecin țară" << endl;
-                cout << "2. Ștergere vecin țară" << endl;
-                cout << "3. Afișare vecini țară" << endl;
-                cout << "4. Ieșire" << endl;
-                cout << "Introduceți opțiunea dorită: "<<endl;
+                cout << "\n==== MENIU TARA: " << tara << " ====" << endl;
+                cout << "1. Adaugare vecin tara" << endl;
+                cout << "2. Ștergere vecin tara" << endl;
+                cout << "3. Afisare vecini tara" << endl;
+                cout << "4. Iesire" << endl;
+                cout << "Alegeti o optiune: "<<endl;
                 cin >> opt2;
 
                 switch (opt2) 
@@ -141,7 +142,7 @@ void Vecini()
         }
         case 2:
         {
-            cout << "==== LISTA TARIRI SI VECINII FIECAREIA ====" << endl;
+            cout << "==== LISTA TARI SI VECINI ====" << endl;
             for (int i = 1; i <= n; i++)
             {
                 cout << A[i].nume << " se invecineaza cu: ";
