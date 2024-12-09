@@ -1,18 +1,18 @@
 #include <iostream>
+#include <vector>
 #include <string>
 using namespace std;
 
 int Granite[100][100];
+string Culori[100];
 int n = 0, m = 0, nrc=0;
-
-
 
 
 struct Tara
 {
     int index;
     string nume;
-    int id_culoare;
+    string culoare;
 } A[100];
 
 int Verificare_Tara(string tara)
@@ -36,6 +36,19 @@ void Citire_Tari()
         n++;
         A[n].nume = tara;
         A[n].index = n;
+    }
+}
+
+void Citire_Culori()
+{
+    cout<<"Introduceti numarul de culori cu care doriti sa lucrati:"<<endl;
+    cin>>nrc;
+    cout<<"Introduceti culorile dorite"<<endl;
+    cin.ignore();
+    for(int i=1;i<=nrc;i++)
+    {
+        cout<<i<<"-";
+        getline(cin, Culori[i]);
     }
 }
 
@@ -178,6 +191,22 @@ void Vecini()
     }
 }
 
+int Colorare_Tara(int tara, string culoare)
+{
+    for(int vecin=1;vecin<=n;vecin++)
+    {
+        if(Granite[tara][vecin]!=0 && A[vecin].culoare==culoare) return 0;
+    }
+    return 1;
+}
+
+int Colorare_Harta(int tara)
+{
+    if()
+}
+
+
+
 int main()
 {
     //Citire_Tari();
@@ -188,18 +217,13 @@ int main()
         cout << "Tara NR: " << A[k].index << ":-" << A[k].nume << endl;
     }
     */
-   cout<<"Dati un numar de culori: "<<endl;
-   cin>>nrc;
-   string culori[10];
-   cout<<"Ati ales sa folositi: "<<nrc<<"culori.Introduceti aceste culori:"<<endl;
-   for(int i=1;i<=nrc;i++)
-   {
-    cin>>culori[i];
-   }
+
+    Citire_Culori();
+
     for(int i=1;i<=nrc;i++)
-   {
-    cout<<culori[i]<<" ";
-   }
+    {
+        cout<<i<<"-"<<Culori[i]<<endl;
+    }
 
 
 
