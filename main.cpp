@@ -115,6 +115,7 @@ void Vecini()
                   }
                   case 3:
                   {
+                    ok=0;
                     int ind1=Verificare_Tara(tara);
                     cout<<tara<<" se invecineaza cu: ";
                     for (int j = 1; j <= n; j++) {
@@ -145,6 +146,7 @@ void Vecini()
             cout << "==== LISTA TARI SI VECINI ====" << endl;
             for (int i = 1; i <= n; i++)
             {
+                ok=0;
                 cout << A[i].nume << " se invecineaza cu: ";
                 for (int j = 1; j <= n; j++)
                 {
