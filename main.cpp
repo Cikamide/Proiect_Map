@@ -3,7 +3,10 @@
 using namespace std;
 
 int Granite[100][100];
-int n = 0, m = 0;
+int n = 0, m = 0, nrc=0;
+
+
+
 
 struct Tara
 {
@@ -177,13 +180,28 @@ void Vecini()
 
 int main()
 {
-    Citire_Tari();
-    Vecini();
+    //Citire_Tari();
+    // Vecini();
 
-    for (int k = 1; k <= n; k++)
+     /* for (int k = 1; k <= n; k++)
     {
         cout << "Tara NR: " << A[k].index << ":-" << A[k].nume << endl;
     }
+    */
+   cout<<"Dati un numar de culori: "<<endl;
+   cin>>nrc;
+   string culori[10];
+   cout<<"Ati ales sa folositi: "<<nrc<<"culori.Introduceti aceste culori:"<<endl;
+   for(int i=1;i<=nrc;i++)
+   {
+    cin>>culori[i];
+   }
+    for(int i=1;i<=nrc;i++)
+   {
+    cout<<culori[i]<<" ";
+   }
+
+
 
     return 0;
 }
