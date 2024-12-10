@@ -77,7 +77,7 @@ void Vecini()
         {
             cout << "Introduceti tara:" << endl;
             cin >> tara;
-            if (Verificare_Tara(tara) == -1)
+            if (Verificare_Tara(tara) == 0)
             {
                 cout << "Tara introdusa gresit sau nu exista.Incercati iar." << endl;
                 break;
@@ -126,8 +126,8 @@ void Vecini()
                         break;
                     }
                     Granite[ind1][ind2]=Granite[ind2][ind1]=0;
-                    cout<<vecin<<" a fost ster cu succes din lista vecinilor tarii: "<<tara<<endl;
-                     
+                    cout<<vecin<<" a fost sters cu succes din lista vecinilor tarii: "<<tara<<endl;
+                    break;
                   }
                   case 3:
                   {
@@ -156,6 +156,7 @@ void Vecini()
                   
                 }
              }
+             break;
         }
         case 2:
         {
@@ -191,41 +192,33 @@ void Vecini()
     }
 }
 
-int Colorare_Tara(int tara, string culoare)
+int Colorare_Tara(int index_tara, string culoare)
 {
     for(int vecin=1;vecin<=n;vecin++)
     {
-        if(Granite[tara][vecin]!=0 && A[vecin].culoare==culoare) return 0;
+        if(Granite[index_tara][vecin]!=0 && A[vecin].culoare==culoare) return 0;
     }
     return 1;
 }
 
-int Colorare_Harta(int tara)
+int Colorare_Harta(int index_tara)
 {
-    if()
+    if(A[index_tara].index==n+1) return 1;
+    for(int i=1;i<=nrc;i++)
+    {
+        if(Colorare_Tara(A[index_tara].index,Culori[i])==1)
+        {
+            A[index_tara].culoare=Culori[i];
+            if(Colorare_Harta(index_tara+1)) return 1;
+        }
+    }
+    return 0;
 }
 
 
 
 int main()
 {
-    //Citire_Tari();
-    // Vecini();
-
-     /* for (int k = 1; k <= n; k++)
-    {
-        cout << "Tara NR: " << A[k].index << ":-" << A[k].nume << endl;
-    }
-    */
-
-    Citire_Culori();
-
-    for(int i=1;i<=nrc;i++)
-    {
-        cout<<i<<"-"<<Culori[i]<<endl;
-    }
-
-
-
+   memset(Granite, 0, sizeof(Granite));
     return 0;
 }
