@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <cstring>
 #include <string>
 using namespace std;
 
@@ -203,13 +204,14 @@ int Colorare_Tara(int index_tara, string culoare)
 
 int Colorare_Harta(int index_tara)
 {
-    if(A[index_tara].index==n+1) return 1;
+    if(A[index_tara].index>n) return 1;
     for(int i=1;i<=nrc;i++)
     {
         if(Colorare_Tara(A[index_tara].index,Culori[i])==1)
         {
-            A[index_tara].culoare=Culori[i];
-            if(Colorare_Harta(index_tara+1)) return 1;
+            A[index_tara].culoare=Culori[i]; //segmentation
+            if((index_tara + 1 <= n) && Colorare_Harta(index_tara+1)) return 1;
+            A[index_tara].culoare = "";
         }
     }
     return 0;
@@ -219,6 +221,20 @@ int Colorare_Harta(int index_tara)
 
 int main()
 {
-   memset(Granite, 0, sizeof(Granite));
+    memset(Granite, 0, sizeof(Granite));
+    Citire_Tari();
+    Citire_Culori();
+    //Vecini();
+    Setare_Granite("Romania", "Ungaria");
+    Setare_Granite("Romania", "Bulgaria");
+    Setare_Granite("Ungaria", "Austria");
+    if (Colorare_Harta(1)) {
+        cout << "Colorarea hărții a fost realizată cu succes:" << endl;
+        for (int i = 1; i <= n; i++) {
+            cout << A[i].nume << " -> " << A[i].culoare << endl;
+        }
+    } else {
+        cout << "Nu s-a reușit colorarea hărții." << endl;
+    }
     return 0;
 }
