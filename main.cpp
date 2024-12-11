@@ -224,10 +224,10 @@ int main()
     memset(Granite, 0, sizeof(Granite));
     Citire_Tari();
     Citire_Culori();
-    //Vecini();
-    Setare_Granite("Romania", "Ungaria");
-    Setare_Granite("Romania", "Bulgaria");
-    Setare_Granite("Ungaria", "Austria");
+    Vecini();
+    // Setare_Granite("Romania", "Ungaria");
+    // Setare_Granite("Romania", "Bulgaria");
+    // Setare_Granite("Ungaria", "Austria");
     if (Colorare_Harta(1)) {
         cout << "Colorarea hărții a fost realizată cu succes:" << endl;
         for (int i = 1; i <= n; i++) {
