@@ -37,6 +37,7 @@ void Citire_Tari()
         n++;
         A[n].nume = tara;
         A[n].index = n;
+        A[n].culoare = "";
     }
 }
 
@@ -204,13 +205,13 @@ int Colorare_Tara(int index_tara, string culoare)
 
 int Colorare_Harta(int index_tara)
 {
-    if(A[index_tara].index>n) return 1;
+    if(index_tara>n) return 1;
     for(int i=1;i<=nrc;i++)
     {
-        if(Colorare_Tara(A[index_tara].index,Culori[i])==1)
+        if(Colorare_Tara(index_tara,Culori[i])==1)
         {
-            A[index_tara].culoare=Culori[i]; //segmentation
-            if((index_tara + 1 <= n) && Colorare_Harta(index_tara+1)) return 1;
+            A[index_tara].culoare=Culori[i];
+            if(Colorare_Harta(index_tara+1)) return 1;
             A[index_tara].culoare = "";
         }
     }
@@ -225,9 +226,7 @@ int main()
     Citire_Tari();
     Citire_Culori();
     Vecini();
-    // Setare_Granite("Romania", "Ungaria");
-    // Setare_Granite("Romania", "Bulgaria");
-    // Setare_Granite("Ungaria", "Austria");
+
     if (Colorare_Harta(1)) {
         cout << "Colorarea hărții a fost realizată cu succes:" << endl;
         for (int i = 1; i <= n; i++) {
