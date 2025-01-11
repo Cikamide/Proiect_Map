@@ -1,12 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080">
-<circle cx="450" cy="250" r="20" fill="blue" stroke="black" stroke-width="1" />
+<circle cx="450" cy="250" r="20" fill="red" stroke="black" stroke-width="1" />
 <text x="450" y="255" font-size="12" text-anchor="middle" fill="black">1</text>
-<circle cx="151" cy="423" r="20" fill="blue" stroke="black" stroke-width="1" />
-<text x="151" y="428" font-size="12" text-anchor="middle" fill="black">2</text>
-<circle cx="150" cy="78" r="20" fill="blue" stroke="black" stroke-width="1" />
-<text x="150" y="83" font-size="12" text-anchor="middle" fill="black">3</text>
+<circle cx="51" cy="250" r="20" fill="red" stroke="black" stroke-width="1" />
+<text x="51" y="255" font-size="12" text-anchor="middle" fill="black">2</text>
 <text x='1300' y='50' font-size='24' font-weight='bold' fill='black'>LEGENDA</text>
-<text x='1300' y='120' font-size='18' fill='black'>1-1 - blue</text>
-<text x='1300' y='150' font-size='18' fill='black'>2-2 - blue</text>
-<text x='1300' y='180' font-size='18' fill='black'>3-3 - blue</text>
+<text x='1300' y='120' font-size='18' fill='black'>1-1 - red</text>
+<text x='1300' y='150' font-size='18' fill='black'>2-2 - red</text>
 </svg>
