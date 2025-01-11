@@ -1,7 +1,8 @@
 #include <iostream>
-#include <vector>
+#include <cmath>
 #include <cstring>
 #include <string>
+#include <fstream>
 using namespace std;
 
 int Granite[100][100];
@@ -69,7 +70,7 @@ void Vecini()
     while (opt1 != 3)
     {
         cout << "\n==== MENIU ====" << endl;
-        cout << "1. Selectare tara pentre a adauga vecini" << endl;
+        cout << "1. Selectare tara pentru a adauga vecini" << endl;
         cout << "2. Afișare tari si vecini" << endl;
         cout << "3. Iesire" << endl;
         cout << "Alegeti o optiune: " << endl;
@@ -225,6 +226,47 @@ int Colorare_Harta(int index_tara)
     }
     return 0;
 }
+void hartaSVG()
+{
+    ofstream f("harta.svg");
+    int R = 200, CX = 250, CY = 250, r = 20, cx[100], cy[100];
+
+    for (int i = 1; i <= n; i++)
+    {
+        double unghi = 2.0 * 3.14 * (i - 1) / n;
+        cx[i] = CX + int(R * cos(unghi));
+        cy[i] = CY + int(R * sin(unghi));
+    }
+    f << "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"1920\" height=\"1080\">" << endl;
+
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = i + 1; j <= n; j++)
+        {
+            if (Granite[i][j] == 1)
+            {
+                f << "<line x1=\"" << cx[i] << "\" y1=\"" << cy[i] << "\" x2=\"" << cx[j] << "\" y2=\"" << cy[j] << "\" stroke=\"black\" stroke-width=\"2\" />" << endl;
+            }
+        }
+    }
+
+    for (int i = 1; i <= n; i++)
+    {
+        f << "<circle cx=\"" << cx[i] << "\" cy=\"" << cy[i] << "\" r=\"" << r << "\" fill=\"" << A[i].culoare << "\" stroke=\"black\" stroke-width=\"1\" />" << endl;
+        f << "<text x=\"" << cx[i] << "\" y=\"" << cy[i] + 5 << "\" font-size=\"12\" text-anchor=\"middle\" fill=\"black\">" << i << "</text>" << endl;
+    }
+
+    f << "<text x='1300' y='50' font-size='24' font-weight='bold' fill='black'>LEGENDA</text>\n"; 
+
+    for (int i = 1; i <= n; i++)
+    {
+        f << "<text x='1300' y='" << 120 + (i - 1) * 30 << "' font-size='18' fill='black'>" << i << "-" << A[i].nume << " - " << A[i].culoare << "</text>\n";
+    }
+
+    f << "</svg>" << endl;
+    f.close();
+    cout << "Fisierul SVG a fost generat cu succes.Deschideti harta.svg" << endl;
+}
 
 int main()
 {
@@ -245,5 +287,5 @@ int main()
     {
         cout << "Nu s-a reușit colorarea hărții." << endl;
     }
-    return 0;
+    hartaSVG();
 }
