@@ -256,7 +256,7 @@ void hartaSVG()
         f << "<text x=\"" << cx[i] << "\" y=\"" << cy[i] + 5 << "\" font-size=\"12\" text-anchor=\"middle\" fill=\"black\">" << i << "</text>" << endl;
     }
 
-    f << "<text x='1300' y='50' font-size='24' font-weight='bold' fill='black'>LEGENDA</text>\n"; 
+    f << "<text x='1300' y='50' font-size='24' font-weight='bold' fill='black'>LEGENDA</text>\n";
 
     for (int i = 1; i <= n; i++)
     {
@@ -287,5 +287,5 @@ int main()
     {
         cout << "Nu s-a reușit colorarea hărții." << endl;
     }
-   // hartaSVG();
+    hartaSVG();
 }
