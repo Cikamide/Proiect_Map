@@ -1,5 +1,14 @@
+# Imaginea de bază
 FROM gcc:latest
-WORKDIR /usr/src/myapp
+
+# Setăm directorul de lucru
+WORKDIR /usr/src/app
+
+# Copiem fișierul sursă
 COPY main.cpp .
-RUN gcc -o main main.cpp -lstdc++
-CMD [ "./main" ]
+
+# Compilăm fișierul
+RUN g++ -o main main.cpp
+
+# Setăm punctul de pornire
+CMD ["./main"]
