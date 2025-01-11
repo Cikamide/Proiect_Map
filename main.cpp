@@ -228,7 +228,7 @@ int Colorare_Harta(int index_tara)
 }
 void hartaSVG()
 {
-    ofstream f("harta.svg");
+    ofstream f("C:/Users/gogu/Desktop/harta.svg");
     int R = 200, CX = 250, CY = 250, r = 20, cx[100], cy[100];
 
     for (int i = 1; i <= n; i++)
