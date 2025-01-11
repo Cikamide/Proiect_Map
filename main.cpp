@@ -226,7 +226,7 @@ int Colorare_Harta(int index_tara)
     }
     return 0;
 }
-void hartaSVG()
+/*void hartaSVG()
 {
     ofstream f("harta.svg");
     int R = 200, CX = 250, CY = 250, r = 20, cx[100], cy[100];
@@ -266,7 +266,7 @@ void hartaSVG()
     f << "</svg>" << endl;
     f.close();
     cout << "Fisierul SVG a fost generat cu succes.Deschideti harta.svg" << endl;
-}
+}*/
 
 int main()
 {
@@ -287,5 +287,5 @@ int main()
     {
         cout << "Nu s-a reușit colorarea hărții." << endl;
     }
-    hartaSVG();
+   ////////// hartaSVG();
 }
