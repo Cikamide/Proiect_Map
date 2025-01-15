@@ -226,6 +226,21 @@ int Colorare_Harta(int index_tara)
     }
     return 0;
 }
+void Rezultat_Colorare()
+{
+    if (Colorare_Harta(1))
+    {
+        cout << "Colorarea hărții a fost realizată cu succes:" << endl;
+        for (int i = 1; i <= n; i++)
+        {
+            cout << A[i].nume << " -> " << A[i].culoare << endl;
+        }
+    }
+    else
+    {
+        cout << "Nu s-a reușit colorarea hărții." << endl;
+    }
+}
 void hartaSVG()
 {
     ofstream f("harta.svg");
@@ -267,21 +282,7 @@ void hartaSVG()
     f.close();
     cout << "Fisierul SVG a fost generat cu succes.Deschideti harta.svg" << endl;
 }
-void Rezultat_Colorare()
-{
-    if (Colorare_Harta(1))
-    {
-        cout << "Colorarea hărții a fost realizată cu succes:" << endl;
-        for (int i = 1; i <= n; i++)
-        {
-            cout << A[i].nume << " -> " << A[i].culoare << endl;
-        }
-    }
-    else
-    {
-        cout << "Nu s-a reușit colorarea hărții." << endl;
-    }
-}
+
 
 int main()
 {
