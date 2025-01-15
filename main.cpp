@@ -267,14 +267,8 @@ void hartaSVG()
     f.close();
     cout << "Fisierul SVG a fost generat cu succes.Deschideti harta.svg" << endl;
 }
-
-int main()
+void AlgGreedy()
 {
-    memset(Granite, 0, sizeof(Granite));
-    Citire_Tari();
-    Citire_Culori();
-    Vecini();
-
     if (Colorare_Harta(1))
     {
         cout << "Colorarea hărții a fost realizată cu succes:" << endl;
@@ -287,5 +281,14 @@ int main()
     {
         cout << "Nu s-a reușit colorarea hărții." << endl;
     }
+}
+
+int main()
+{
+    memset(Granite, 0, sizeof(Granite));
+    Citire_Tari();
+    Citire_Culori();
+    Vecini();
+    AlgGreedy();
     hartaSVG();
 }
