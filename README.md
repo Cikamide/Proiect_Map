@@ -83,3 +83,10 @@ Input:
 
 Output:
 - Hartă SVG cu cele 3 țări colorate corespunzător, respectând cerințele.
+## Documentații
+
+- [Documentația C++](https://en.cppreference.com/w/)
+- [Cartea C++](https://www.learncpp.com/)
+- [Introducere în SVG - W3Schools](https://www.w3schools.com/graphics/svg_intro.asp)
+- [Teoria celor 4 culori](https://en.wikipedia.org/wiki/Four_color_theorem)
+- [Greedy Coloring - Wikipedia](https://en.wikipedia.org/wiki/Greedy_coloring)
