@@ -267,7 +267,7 @@ void hartaSVG()
     f.close();
     cout << "Fisierul SVG a fost generat cu succes.Deschideti harta.svg" << endl;
 }
-void AlgGreedy()
+void Rezultat_Colorare()
 {
     if (Colorare_Harta(1))
     {
@@ -289,6 +289,6 @@ int main()
     Citire_Tari();
     Citire_Culori();
     Vecini();
-    AlgGreedy();
+    Rezultat_Colorare();
     hartaSVG();
 }
